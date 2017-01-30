@@ -63,7 +63,8 @@ int main(int argc, const char * argv[]) {
             }
         }
         
-        NSLog(@"Ha ganado el soldado %@", [arraySoldados[0] nombre]);
+        id soldadoGanador = arraySoldados[0];
+        NSLog(@"Ha ganado el soldado %@", [soldadoGanador nombre]);
         
         
 //        Soldier *soldado1;
