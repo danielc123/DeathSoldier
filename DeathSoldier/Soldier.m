@@ -26,7 +26,13 @@
     return self;
 }
 
+-(bool)muerto{
+    return _vida <= 0;
+}
+
+
 -(bool)disparar:(Soldier *)objetivo{
+    if (self.muerto) return false;
     if (_arma != nil){
         int aleatorio = rand() % 10;
         if (aleatorio < _precision) {
@@ -54,6 +60,7 @@
 }
 
 -(void)recibirDaño:(int)daño{
+    if (self.muerto) return;
     _vida -= daño;
     NSLog(@"%@ dice: Arghh, me han herido", _nombre);
     if (_vida <=0) {
@@ -62,6 +69,7 @@
 }
 
 -(void)cambiarArma:(Arma *)arma{
+    if (self.muerto) return;
     if (_arma != nil){
         NSLog(@"%@ dice: Suelto el arma %@", _nombre, _arma.nombre);
     }

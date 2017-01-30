@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) int vida;
 @property (nonatomic, readonly) float precision;
 @property (nonatomic, readonly) Arma *arma;
-
+@property (nonatomic, readonly) bool muerto;
 
 -(id)initWithNombre:(NSString*)nombre
          vidaMaxima:(int)vidaMaxima

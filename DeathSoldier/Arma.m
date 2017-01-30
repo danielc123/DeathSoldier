@@ -8,6 +8,11 @@
 
 #import "Arma.h"
 
+//Propiedad Privada
+//@interface Arma ()
+//@property (nonatomic) int numero;
+//@end
+
 @implementation Arma
 
 -(id)initWithNombre:(NSString *)nombre daño:(int)daño{
