@@ -10,4 +10,13 @@
 
 @implementation Arma
 
+-(id)initWithNombre:(NSString *)nombre daño:(int)daño{
+    self = [super init];
+    if (self){
+        _nombre = nombre;
+        _daño = daño;
+    }
+    return self;
+}
+
 @end

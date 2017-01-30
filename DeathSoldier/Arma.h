@@ -10,4 +10,9 @@
 
 @interface Arma : NSObject
 
+@property(nonatomic, readonly) NSString *nombre;
+@property(nonatomic, readonly) int daño;
+
+-(id)initWithNombre:(NSString*)nombre daño:(int)daño;
+
 @end

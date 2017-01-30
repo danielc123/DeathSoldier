@@ -14,15 +14,14 @@
 @property (nonatomic, readonly) NSString *nombre;
 @property (nonatomic, readonly) int vidaMaxima;
 @property (nonatomic, readonly) int vida;
-@property (nonatomic, readonly) int blindaje;
 @property (nonatomic, readonly) float precision;
 @property (nonatomic, readonly) Arma *arma;
 
+
 -(id)initWithNombre:(NSString*)nombre
          vidaMaxima:(int)vidaMaxima
-               vida:(int)vida
-           blindaje:(int)blindaje
           precision:(float)precision;
+
 
 -(bool)disparar:(Soldier*)objetivo;
 -(void)curar:(int)curacion;
