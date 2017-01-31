@@ -11,12 +11,12 @@
 
 @interface Soldier : NSObject
 
-@property (nonatomic, readonly) NSString *nombre;
-@property (nonatomic, readonly) int vidaMaxima;
-@property (nonatomic, readonly) int vida;
-@property (nonatomic, readonly) float precision;
-@property (nonatomic, readonly) Arma *arma;
-@property (nonatomic, readonly) bool muerto;
+@property (nonatomic, readonly, copy) NSString *nombre;
+@property (nonatomic, readonly, assign) int vidaMaxima;
+@property (nonatomic, readonly, assign) int vida;
+@property (nonatomic, readonly, assign) float precision;
+@property (nonatomic, readonly, strong) Arma *arma;
+@property (nonatomic, readonly, assign) bool muerto;
 
 -(id)initWithNombre:(NSString*)nombre
          vidaMaxima:(int)vidaMaxima
