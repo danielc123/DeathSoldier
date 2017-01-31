@@ -11,8 +11,7 @@
 @implementation Soldier
 
 -(id)initWithNombre:(NSString *)nombreSoldado
-         vidaMaxima:(int)vidaMaxima
-          precision:(float)precision{
+         vidaMaxima:(int)vidaMaxima{
     
     self = [super init];
     
@@ -20,7 +19,6 @@
         _nombre = nombreSoldado;
         _vidaMaxima = vidaMaxima;
         _vida = vidaMaxima;
-        _precision = precision;
         _arma = nil;
     }
     return self;
@@ -31,19 +29,11 @@
 }
 
 
--(bool)disparar:(Soldier *)objetivo{
+-(bool)atacar:(Soldier *)objetivo{
     if (self.muerto) return false;
     if (_arma != nil){
-        int aleatorio = rand() % 10;
-        if (aleatorio < _precision) {
-            NSLog(@"%@ dice: Muahahahaha, he acertado al soldado %@", _nombre, objetivo.nombre);
-            [objetivo recibirDaño:_arma.daño];
-            return true;
-        }
-        else {
-            NSLog(@"%@ dice: Mierda!! he fallado", _nombre);
-        }
-        return false;
+        [_arma atacar:objetivo];
+        return true;
     }
     else {
         NSLog(@"%@ dice: Maldita sea, no tengo arma", _nombre);

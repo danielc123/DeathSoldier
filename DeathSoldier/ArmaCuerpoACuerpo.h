@@ -13,6 +13,8 @@
 @property (nonatomic, readonly) int maxDesgaste;
 @property (nonatomic, readonly) int desgaste;
 
+-(id)initWithNombre:(NSString*)nombre daño:(int)daño precision:(int)precision maxDesgaste:(int)maxDesgaste;
+
 -(void)afilar;
 
 @end

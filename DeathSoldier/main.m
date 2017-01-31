@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Soldier.h"
 #import "Arma.h"
-
+#import "ArmaCuerpoACuerpo.h"
+#import "ArmaDistancia.h"
 
 
 
@@ -19,7 +20,8 @@ int main(int argc, const char * argv[]) {
         srand((unsigned int)time(nil));
         
         NSArray *nombresSoldados = @[ @"John", @"Peter", @"Jonas", @"Carl", @"Rick"];
-        NSArray *nombresArmas = @[@"Bazoka", @"Pistola", @"Rifle", @"Cuchillo", @"Puñetazo"];
+        NSArray *nombresArmasDistancia = @[@"Bazoka", @"Pistola", @"Rifle", @"Lanzagranadas", @"Escopeta"];
+        NSArray *nombresArmasCC = @[@"Espada", @"Lanza", @"Maza", @"Cuchillo", @"Katana"];
         
         NSMutableArray *arraySoldados = [[NSMutableArray alloc] init];
         
@@ -27,19 +29,28 @@ int main(int argc, const char * argv[]) {
             
             NSString *nombreSoldado = [nombresSoldados objectAtIndex:i];
                                 //  = nombresSoldados[i];  tambien se puede usar
-            NSString *nombreArma = nombresArmas[i];
-            
+       
             Soldier *nuevoSoldado = [[Soldier alloc]
                                      initWithNombre:nombreSoldado
-                                     vidaMaxima:50+rand() % 50
-                                     precision:(float)rand() / INT_MAX * 10];
+                                     vidaMaxima:50+rand() % 50];
 
-            Arma *nuevaArma = [[Arma alloc]
-                               initWithNombre:nombreArma
-                               daño:10 + rand() % 10
-                               precision: (float)rand() / INT_MAX * 10];
-            [nuevoSoldado cambiarArma:nuevaArma];
-        
+            bool armaCC = (rand() % 2 == 0);
+            if (armaCC) {
+                Arma *nuevaArma = [[ArmaCuerpoACuerpo alloc]
+                                   initWithNombre:nombresArmasCC[i]
+                                   daño:10 + rand() % 10
+                                   precision: (float)rand() / INT_MAX * 10
+                                   maxDesgaste:3];
+                [nuevoSoldado cambiarArma:nuevaArma];
+            } else {
+                Arma *nuevaArma = [[ArmaDistancia alloc]
+                                   initWithNombre:nombresArmasDistancia[i]
+                                   daño:10 + rand() % 10
+                                   precision: (float)rand() / INT_MAX * 10
+                                   maxMunicion:5];
+                [nuevoSoldado cambiarArma:nuevaArma];
+            }
+       
             [arraySoldados addObject:nuevoSoldado];
         }
         
@@ -59,7 +70,7 @@ int main(int argc, const char * argv[]) {
             } while (soldadoDefensor == soldadoAtacante);
             
             // El soldado atancante dispara al defensor
-            [soldadoAtacante disparar:soldadoDefensor];
+            [soldadoAtacante atacar:soldadoDefensor];
             
             // Si el soldado dfensor muere, le sacamos del array
             if (soldadoDefensor.muerto) {

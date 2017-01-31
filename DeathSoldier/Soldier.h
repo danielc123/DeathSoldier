@@ -14,16 +14,14 @@
 @property (nonatomic, readonly, copy) NSString *nombre;
 @property (nonatomic, readonly, assign) int vidaMaxima;
 @property (nonatomic, readonly, assign) int vida;
-@property (nonatomic, readonly, assign) float precision;
 @property (nonatomic, readonly, strong) Arma *arma;
 @property (nonatomic, readonly, assign) bool muerto;
 
 -(id)initWithNombre:(NSString*)nombre
-         vidaMaxima:(int)vidaMaxima
-          precision:(float)precision;
+         vidaMaxima:(int)vidaMaxima;
 
 
--(bool)disparar:(Soldier*)objetivo;
+-(bool)atacar:(Soldier*)objetivo;
 -(void)curar:(int)curacion;
 -(void)recibirDaño:(int)daño;
 -(void)cambiarArma:(Arma*)arma;

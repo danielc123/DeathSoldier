@@ -54,6 +54,7 @@
         
     }
     else {
+        // Si el arma no tiene munición, la recargo
         [self recargar];
     }
 }
