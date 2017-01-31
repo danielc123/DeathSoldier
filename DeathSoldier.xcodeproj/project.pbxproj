@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0942ECF01E40F1810076842F /* ArmaDistancia.m in Sources */ = {isa = PBXBuildFile; fileRef = 0942ECEF1E40F1810076842F /* ArmaDistancia.m */; };
+		0942ECF31E40F1BE0076842F /* ArmaCuerpoACuerpo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0942ECF21E40F1BE0076842F /* ArmaCuerpoACuerpo.m */; };
 		099801191E3BD3D400F8224D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 099801181E3BD3D400F8224D /* main.m */; };
 		099801211E3BD4AE00F8224D /* Soldier.m in Sources */ = {isa = PBXBuildFile; fileRef = 099801201E3BD4AE00F8224D /* Soldier.m */; };
 		099801241E3BD90300F8224D /* Arma.m in Sources */ = {isa = PBXBuildFile; fileRef = 099801231E3BD90300F8224D /* Arma.m */; };
@@ -25,6 +27,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0942ECEE1E40F1810076842F /* ArmaDistancia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArmaDistancia.h; sourceTree = "<group>"; };
+		0942ECEF1E40F1810076842F /* ArmaDistancia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArmaDistancia.m; sourceTree = "<group>"; };
+		0942ECF11E40F1BE0076842F /* ArmaCuerpoACuerpo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArmaCuerpoACuerpo.h; sourceTree = "<group>"; };
+		0942ECF21E40F1BE0076842F /* ArmaCuerpoACuerpo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArmaCuerpoACuerpo.m; sourceTree = "<group>"; };
 		099801151E3BD3D400F8224D /* DeathSoldier */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DeathSoldier; sourceTree = BUILT_PRODUCTS_DIR; };
 		099801181E3BD3D400F8224D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0998011F1E3BD4AE00F8224D /* Soldier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Soldier.h; sourceTree = "<group>"; };
@@ -68,6 +74,10 @@
 				099801201E3BD4AE00F8224D /* Soldier.m */,
 				099801221E3BD90300F8224D /* Arma.h */,
 				099801231E3BD90300F8224D /* Arma.m */,
+				0942ECEE1E40F1810076842F /* ArmaDistancia.h */,
+				0942ECEF1E40F1810076842F /* ArmaDistancia.m */,
+				0942ECF11E40F1BE0076842F /* ArmaCuerpoACuerpo.h */,
+				0942ECF21E40F1BE0076842F /* ArmaCuerpoACuerpo.m */,
 			);
 			path = DeathSoldier;
 			sourceTree = "<group>";
@@ -132,6 +142,8 @@
 				099801211E3BD4AE00F8224D /* Soldier.m in Sources */,
 				099801191E3BD3D400F8224D /* main.m in Sources */,
 				099801241E3BD90300F8224D /* Arma.m in Sources */,
+				0942ECF31E40F1BE0076842F /* ArmaCuerpoACuerpo.m in Sources */,
+				0942ECF01E40F1810076842F /* ArmaDistancia.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +270,7 @@
 				0998011E1E3BD3D400F8224D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

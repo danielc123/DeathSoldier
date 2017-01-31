@@ -71,10 +71,12 @@
 -(void)cambiarArma:(Arma *)arma{
     if (self.muerto) return;
     if (_arma != nil){
+        _arma.propietario = nil;
         NSLog(@"%@ dice: Suelto el arma %@", _nombre, _arma.nombre);
     }
     _arma = arma;
     if (_arma != nil){
+        _arma.propietario = self;
         NSLog(@"%@ dice: Cojo el arma %@", _nombre, _arma.nombre);
     }
 }

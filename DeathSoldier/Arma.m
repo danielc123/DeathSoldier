@@ -7,6 +7,7 @@
 //
 
 #import "Arma.h"
+#import "Soldier.h"
 
 //Propiedad Privada
 //@interface Arma ()
@@ -15,13 +16,19 @@
 
 @implementation Arma
 
--(id)initWithNombre:(NSString *)nombre daño:(int)daño{
+-(id)initWithNombre:(NSString *)nombre
+               daño:(int)daño
+          precision:(int)precision{
     self = [super init];
     if (self){
         _nombre = nombre;
         _daño = daño;
+        _precision = precision;
     }
     return self;
+}
+
+-(void)atacar:(Soldier*)soldado{
 }
 
 @end

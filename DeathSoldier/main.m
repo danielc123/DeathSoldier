@@ -30,10 +30,14 @@ int main(int argc, const char * argv[]) {
             NSString *nombreArma = nombresArmas[i];
             
             Soldier *nuevoSoldado = [[Soldier alloc]
-                                     initWithNombre:nombreSoldado vidaMaxima:50+rand() % 50 precision:(float)rand() / INT_MAX * 10];
+                                     initWithNombre:nombreSoldado
+                                     vidaMaxima:50+rand() % 50
+                                     precision:(float)rand() / INT_MAX * 10];
 
             Arma *nuevaArma = [[Arma alloc]
-                               initWithNombre:nombreArma daño:10 + rand() % 10];
+                               initWithNombre:nombreArma
+                               daño:10 + rand() % 10
+                               precision: (float)rand() / INT_MAX * 10];
             [nuevoSoldado cambiarArma:nuevaArma];
         
             [arraySoldados addObject:nuevoSoldado];
